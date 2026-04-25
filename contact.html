@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Aman's Portfolio</title>
+    <meta name="description" content="Get in touch with me.">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="shooting-stars-container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Full-Screen Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-border">
+            <div class="loader-core"></div>
+        </div>
+        <p class="loader-text">Loading...</p>
+    </div>
+
+    <div class="container" id="portfolio-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>AMAN<span class="highlight-text">'S</span></h1>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>HOME</span></a></li>
+                    <li><a href="achievements.html" class="nav-item"><i class="fas fa-trophy"></i><span>ACHIEVEMENTS</span></a></li>
+                    <li><a href="projects.html" class="nav-item"><i class="fas fa-magic"></i><span>PROJECTS</span></a></li>
+                    <li><a href="contact.html" class="nav-item" style="color: var(--text-color);"><i
+                                class="fas fa-envelope"
+                                style="color: var(--accent-red); transform: translateY(-3px);"></i><span>CONTACT</span></a>
+                    </li>
+                    <li><a href="resume.html" class="nav-item"><i class="fas fa-file-invoice"></i><span>RESUME</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/aman-kumar-44b4183a0/" class="nav-item" target="_blank"><i class="fab fa-linkedin"></i><span>LINKEDIN</span></a></li>
+
+                    <li><a href="https://github.com/Aman-codes0-0" class="nav-item" target="_blank"><i class="fab fa-github"></i><span>GITHUB</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Contact Section -->
+        <section class="contact-section">
+            <div class="section-header">
+                <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
+            </div>
+
+            <div class="glass-panel" style="padding: 3rem; text-align: center;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's work together</h3>
+                <p
+                    style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                    I'm currently available for freelance work and open to new opportunities. Whether you have a
+                    question or just want to say hi, I'll try my best to get back to you!
+                </p>
+                <button id="open-contact-modal" class="cta-button"
+                    style="margin-top: 1rem; margin-bottom: 2rem; background-color: var(--accent-red); box-shadow: 0 10px 15px rgba(229, 62, 62, 0.2); border: none; cursor: pointer;">
+                    Say Hello <i class="fas fa-paper-plane"></i>
+                </button>
+
+
+                <div
+                    style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marker-alt"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                        <p style="font-weight: 600;">Location</p>
+                        <p class="skill-meta">Kanpur, Uttar Pradesh, India</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-envelope-open-text"
+                            style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                        <p style="font-weight: 600;">Email</p>
+                        <p class="skill-meta" style="font-size: 0.8rem;">
+                            <a href="mailto:at456761@gmail.com" style="color: inherit;">at456761@gmail.com</a><br>
+                            <a href="mailto:senaman133@gmail.com" style="color: inherit;">senaman133@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 Aman Kumar. Designed with aesthetics.</p>
+        </footer>
+
+        <!-- Contact Modal -->
+        <div class="modal-overlay" id="contact-modal">
+            <div class="modal-content glass-panel">
+                <i class="fas fa-times close-modal" id="close-modal"></i>
+                
+                <div id="contact-form-container">
+                    <h2 style="margin-bottom: 0.5rem; color: var(--primary-color);">Send a Message</h2>
+                    <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 2rem;">I'll get back to you as soon as possible.</p>
+                    
+                    <form class="contact-form" id="actual-form">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Aman Kumar" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" placeholder="aman@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" rows="4" placeholder="How can I help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="cta-button submit-btn">
+                            Send Message <i class="fas fa-paper-plane" style="margin-left: 0.5rem;"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="form-success" id="success-msg">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Message Sent!</h2>
+                    <p style="color: var(--text-light); margin-top: 0.5rem;">Thank you for reaching out. I'll contact you soon.</p>
+                    <button class="cta-button" style="margin-top: 2rem;" onclick="location.reload()">Back to Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                theme = 'light';
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                theme = 'dark';
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loader').style.opacity = '0';
+                document.getElementById('loader').style.pointerEvents = 'none';
+            }, 500); // Small artificial delay for aesthetics
+        });
+
+        // Modal Logic
+        const openModalBtn = document.getElementById('open-contact-modal');
+        const closeModalBtn = document.getElementById('close-modal');
+        const modalOverlay = document.getElementById('contact-modal');
+        const contactForm = document.getElementById('actual-form');
+        const formContainer = document.getElementById('contact-form-container');
+        const successMsg = document.getElementById('success-msg');
+
+        openModalBtn.addEventListener('click', () => {
+            modalOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; 
+        });
+
+        const closeModal = () => {
+            modalOverlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', (e) => {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        // Form Submission Simulation
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.submit-btn');
+            btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+            btn.style.opacity = '0.7';
+            btn.style.pointerEvents = 'none';
+
+            setTimeout(() => {
+                formContainer.style.display = 'none';
+                successMsg.style.display = 'block';
+            }, 1500);
+        });
+
+    </script>
+</body>
+
+</html>
