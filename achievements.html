@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - Aman Kumar's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="shooting-stars-container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Full-Screen Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-border">
+            <div class="loader-core"></div>
+        </div>
+        <p class="loader-text">Loading...</p>
+    </div>
+
+    <div class="container" id="portfolio-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>AMAN<span class="highlight-text">'S</span></h1>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>HOME</span></a></li>
+                    <li><a href="achievements.html" class="nav-item" style="color: var(--text-color);"><i class="fas fa-trophy" style="color: var(--accent-red); transform: translateY(-3px);"></i><span>ACHIEVEMENTS</span></a></li>
+                    <li><a href="projects.html" class="nav-item"><i class="fas fa-magic"></i><span>PROJECTS</span></a></li>
+                    <li><a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i><span>CONTACT</span></a></li>
+                    <li><a href="resume.html" class="nav-item"><i class="fas fa-file-invoice"></i><span>RESUME</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/aman-kumar-44b4183a0/" class="nav-item" target="_blank"><i class="fab fa-linkedin"></i><span>LINKEDIN</span></a></li>
+                    <li><a href="https://github.com/Aman-codes0-0" class="nav-item" target="_blank"><i class="fab fa-github"></i><span>GITHUB</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Achievements Content -->
+        <section class="achievements-page-content">
+            <div class="section-header">
+                <h2><i class="fas fa-trophy"></i> Certifications & Achievements</h2>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Technical Certifications -->
+                <div class="skill-card glass-panel" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+                        <i class="fas fa-certificate" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                        <h3 style="font-size: 1.4rem;">Technical Certifications</h3>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <!-- Python Certification -->
+                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--primary-color); background: rgba(49, 151, 149, 0.05); border-radius: 12px; box-shadow: 0 0 15px rgba(49, 151, 149, 0.1); display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div>
+                                <p style="margin-bottom: 0.3rem;"><strong style="font-size: 1.1rem; color: var(--text-color);">Advanced Python Programming</strong></p>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Mastery in data structures, algorithms, and system integrations.</p>
+                            </div>
+                            <div class="certificate-placeholder" style="width: 100%; height: 100px; border: 1px dashed var(--border-color); border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.1); cursor: pointer;">
+                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
+                            </div>
+                        </div>
+
+                        <!-- C++ Certification -->
+                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--primary-color); background: rgba(49, 151, 149, 0.05); border-radius: 12px; box-shadow: 0 0 15px rgba(49, 151, 149, 0.1); display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div>
+                                <p style="margin-bottom: 0.3rem;"><strong style="font-size: 1.1rem; color: var(--text-color);">C++ System Development</strong></p>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Focus on memory management, STL, and low-level optimizations.</p>
+                            </div>
+                            <div class="certificate-placeholder" style="width: 100%; height: 100px; border: 1px dashed var(--border-color); border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.1); cursor: pointer;">
+                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
+                            </div>
+                        </div>
+
+                        <!-- Linux Certification -->
+                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--primary-color); background: rgba(49, 151, 149, 0.05); border-radius: 12px; box-shadow: 0 0 15px rgba(49, 151, 149, 0.1); display: flex; flex-direction: column; gap: 1.2rem;">
+                            <div>
+                                <p style="margin-bottom: 0.3rem;"><strong style="font-size: 1.1rem; color: var(--text-color);">Linux System Administration</strong></p>
+                                <p style="font-size: 0.85rem; color: var(--text-light);">Shell scripting, server management, and security protocols.</p>
+                            </div>
+                            <div class="certificate-placeholder" style="width: 100%; height: 100px; border: 1px dashed var(--border-color); border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.1); cursor: pointer;">
+                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hackathons & Awards -->
+                <div class="skill-card glass-panel" style="padding: 2.5rem; grid-column: span 2;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <i class="fas fa-award" style="font-size: 2.5rem; color: var(--accent-red);"></i>
+                        <h3 style="font-size: 1.4rem;">Awards & Recognitions</h3>
+                    </div>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                        <!-- SIH 2025 -->
+                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--primary-color); background: rgba(49, 151, 149, 0.05); transition: var(--transition); cursor: default; box-shadow: 0 0 15px rgba(49, 151, 149, 0.1);">
+                            <p style="margin-bottom: 0.5rem;"><strong style="font-size: 1.1rem; color: var(--text-color);">Finalist – Smart India Hackathon 2025</strong></p>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Selected as a finalist in one of India's largest national-level hackathons, showcasing technical expertise, teamwork, and real-world problem-solving abilities.</p>
+                            <div class="certificate-placeholder" style="width: 100%; height: 180px; border: 2px dashed var(--border-color); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; transition: var(--transition); background: var(--bg-color); opacity: 0.7;">
+                                <i class="fas fa-image" style="font-size: 2rem; color: var(--text-light); margin-bottom: 0.5rem;"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-light);">Upload SIH Certificate</span>
+                            </div>
+                        </div>
+
+                        <!-- Aviothic 2.0 -->
+                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--accent-red); background: rgba(229, 62, 62, 0.05); transition: var(--transition); cursor: default; box-shadow: 0 0 15px rgba(229, 62, 62, 0.1);">
+                            <p style="margin-bottom: 0.5rem;"><strong style="font-size: 1.1rem; color: var(--text-color);">Secured Top 10 Rank in Aviothic 2.0</strong></p>
+                            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">College-Level Hackathon | Demonstrated strong problem-solving and development skills by building an innovative solution under time constraints.</p>
+                            <div class="certificate-placeholder" style="width: 100%; height: 180px; border: 2px dashed var(--border-color); border-radius: 8px; display: flex; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; transition: var(--transition); background: var(--bg-color); opacity: 0.7;">
+                                <i class="fas fa-image" style="font-size: 2rem; color: var(--text-light); margin-bottom: 0.5rem;"></i>
+                                <span style="font-size: 0.8rem; color: var(--text-light);">Upload Aviothic Certificate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 Aman Kumar. Designed with aesthetics.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                theme = 'light';
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                theme = 'dark';
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                document.getElementById('loader').style.opacity = '0';
+                document.getElementById('loader').style.pointerEvents = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+
+</html>
