@@ -324,11 +324,11 @@
                 
                 const allRepos = await response.json();
                 
-                // Filter: only original repos with STARS, then sort by stars, then take top 3
-                const originalRepos = allRepos
-                    .filter(repo => !repo.fork && repo.stargazers_count > 0)
-                    .sort((a, b) => b.stargazers_count - a.stargazers_count)
-                    .slice(0, 3);
+                // List of explicit featured projects
+                const featuredRepoNames = ['Termi-music', 'LexAnalytica', 'Aviothic2.0_codeforgers'];
+                const originalRepos = featuredRepoNames.map(name => 
+                    allRepos.find(r => r.name.toLowerCase() === name.toLowerCase())
+                ).filter(Boolean);
                 
                 container.innerHTML = '';
                 
