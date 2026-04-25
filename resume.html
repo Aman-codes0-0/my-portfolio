@@ -168,7 +168,7 @@
         async function fetchGitHubProjects() {
             const username = 'Aman-codes0-0';
             // LIST YOUR PINNED PROJECTS HERE
-            const pinnedRepos = ['Termi-music', 'LexAnalytica', 'Aviothic2.0_codeforgers']; 
+            const pinnedRepos = ['Termi-music', 'Termi-Chat', 'Aviothic2.0_codeforgers']; 
             const container = document.getElementById('github-pinned-projects');
             
             if(!container) return;
@@ -192,29 +192,50 @@
                 }
 
                 container.innerHTML = ''; // Clear loader
-                
-                reposToDisplay.forEach(repo => {
-                    const language = repo.language || 'Multiple';
-                    
-                    const projectHTML = `
-                        <div style="margin-bottom: 1.5rem; transition: transform 0.3s; border-left: 2px solid transparent; padding-left: 10px; cursor: default;" 
-                             onmouseover="this.style.borderLeft='2px solid var(--accent-red)'; this.style.transform='translateX(5px)';" 
-                             onmouseout="this.style.borderLeft='2px solid transparent'; this.style.transform='translateX(0)';">
-                            <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                                <h4><a href="${repo.html_url}" target="_blank" style="color: var(--text-color); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-red)';" onmouseout="this.style.color='var(--text-color)';">${repo.name}</a></h4>
-                                <span style="font-size: 0.85rem; color: #e3b341;"><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
-                            </div>
-                            <p style="font-size: 0.9rem; color: var(--primary-color); margin-bottom: 0.5rem; opacity: 0.9;">${language}</p>
-                            <p style="color: var(--text-light); line-height: 1.4;">${repo.description || 'No description provided.'}</p>
-                        </div>
-                    `;
-                    container.innerHTML += projectHTML;
-                });
+                renderResumeProjects(reposToDisplay);
                 
             } catch (error) {
                 console.error("Error fetching GitHub repos:", error);
-                container.innerHTML = '<p style="color: var(--accent-red);"><i class="fas fa-exclamation-circle"></i> Failed to load projects from GitHub.</p>';
+                
+                // Fallback data for Resume page
+                const fallbackRepos = [
+                    { name: 'Termi-music', html_url: 'https://github.com/Aman-codes0-0/Termi-music', stargazers_count: 3, language: 'Python', description: 'Performance-oriented terminal music player with cloud streaming capabilities.' },
+                    { name: 'Termi-Chat', html_url: 'https://github.com/Aman-codes0-0/Termi-Chat', stargazers_count: 0, language: 'Python', description: 'Ephemeral terminal-based chat application for secure and fast communication.' },
+                    { name: 'Aviothic2.0_codeforgers', html_url: 'https://github.com/Aman-codes0-0/Aviothic2.0_codeforgers', stargazers_count: 0, language: 'TypeScript', description: 'Finalist project for Aviothic 2.0 - A unique anonymous chat platform.' }
+                ];
+                
+                container.innerHTML = '';
+                renderResumeProjects(fallbackRepos, true);
             }
+        }
+
+        function renderResumeProjects(repos, isFallback = false) {
+            const container = document.getElementById('github-pinned-projects');
+            if (isFallback) {
+                const notice = document.createElement('p');
+                notice.style.fontSize = '0.7rem';
+                notice.style.opacity = '0.4';
+                notice.style.marginBottom = '1rem';
+                notice.innerHTML = '<i class="fas fa-info-circle"></i> Showing cached data';
+                container.appendChild(notice);
+            }
+
+            repos.forEach(repo => {
+                const language = repo.language || 'Multiple';
+                const projectHTML = `
+                    <div style="margin-bottom: 1.5rem; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); border-left: 2px solid transparent; padding: 10px; border-radius: 8px; cursor: default; position: relative;" 
+                         onmouseover="this.style.borderLeft='3px solid var(--accent-red)'; this.style.transform='translateY(-10px) scale(1.02)'; this.style.background='rgba(255,255,255,0.05)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.3)'; this.style.zIndex='50';" 
+                         onmouseout="this.style.borderLeft='2px solid transparent'; this.style.transform='translateY(0) scale(1)'; this.style.background='transparent'; this.style.boxShadow='none'; this.style.zIndex='1';">
+                        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                            <h4><a href="${repo.html_url}" target="_blank" style="color: var(--text-color); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-red)';" onmouseout="this.style.color='var(--text-color)';">${repo.name}</a></h4>
+                            <span style="font-size: 0.85rem; color: #ecc94b;"><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--primary-color); margin-bottom: 0.5rem; opacity: 0.9;">${language}</p>
+                        <p style="color: var(--text-light); line-height: 1.4;">${repo.description || 'Exploring code and building solutions.'}</p>
+                    </div>
+                `;
+                container.innerHTML += projectHTML;
+            });
         }
 
         // Call the function when DOM is ready
