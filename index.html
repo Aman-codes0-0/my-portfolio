@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aman's Portfolio</title>
+    <meta name="description" content="A professional portfolio showcasing Aman's web development skills and projects.">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="shooting-stars-container">
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+        <div class="star"></div>
+    </div>
+
+    <!-- Full-Screen Loader -->
+    <div class="loader-wrapper" id="loader">
+        <div class="loader-border">
+            <div class="loader-core"></div>
+        </div>
+        <p class="loader-text">Loading...</p>
+    </div>
+
+    <div class="container" id="portfolio-content">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <h1>AMAN<span class="highlight-text">'S</span></h1>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                    <i class="fas fa-sun"></i>
+                </button>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>HOME</span></a></li>
+                    <li><a href="achievements.html" class="nav-item"><i class="fas fa-trophy"></i><span>ACHIEVEMENTS</span></a></li>
+                    <li><a href="projects.html" class="nav-item"><i class="fas fa-magic"></i><span>PROJECTS</span></a></li>
+                    <li><a href="contact.html" class="nav-item"><i class="fas fa-envelope"></i><span>CONTACT</span></a></li>
+                    <li><a href="resume.html" class="nav-item"><i class="fas fa-file-invoice"></i><span>RESUME</span></a></li>
+                    <li><a href="https://www.linkedin.com/in/aman-kumar-44b4183a0/" class="nav-item" target="_blank"><i class="fab fa-linkedin"></i><span>LINKEDIN</span></a></li>
+
+                    <li><a href="https://github.com/Aman-codes0-0" class="nav-item" target="_blank"><i class="fab fa-github"></i><span>GITHUB</span></a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero glass-panel">
+            <div class="profile-image-container">
+                <!-- Image will be generated and placed here -->
+                <img src="aman.jpeg" alt="Profile Picture" class="profile-pic" id="profileImg"
+                    onerror="this.src='https://placehold.co/150x150/eff1f5/4c4f69?text=Profile'">
+            </div>
+            <div class="bio">
+                <p class="tagline"><span class="terminal-prompt">aman@dev:~$</span> Building software with logic and purpose</p>
+                <p><strong>Hello there!</strong> I'm Aman Kumar, a passionate developer who enjoys building <strong>efficient and meaningful digital experiences</strong>. I have a strong interest in system-level programming, terminal-based applications, and modern web development.</p>
+                <p style="border-left: 3px solid var(--accent-red); padding-left: 1rem; font-style: italic; background: rgba(229, 62, 62, 0.05); padding: 1rem; border-radius: 0 8px 8px 0; margin: 1.5rem 0;">"Finalist at <strong>Smart India Hackathon 2025</strong> and <strong>Top 10 performer at Aviothic 2.0</strong>, with a strong focus on building practical and scalable solutions."</p>
+                <p>I enjoy working with <strong>Linux environments</strong> and exploring how software works under the hood. From creating command-line tools to experimenting with APIs and UI frameworks, I focus on building things that are both practical and elegant.</p>
+                <p>Apart from coding, I like exploring new technologies, solving logical problems, and continuously improving my development skills.</p>
+                
+                <div class="career-objective">
+                    <h3><i class="fas fa-bullseye"></i> Career Objective</h3>
+                    <p>To secure a challenging role in the field of software development where I can apply my technical skills, especially in system programming and application development, while continuously learning and contributing to impactful projects.</p>
+                </div>
+
+
+            </div>
+        </section>
+
+        <!-- Areas of Interest Section -->
+        <section class="areas-section">
+            <div class="section-header">
+                <h2><i class="fas fa-heart"></i> Areas of Interest</h2>
+            </div>
+            <div class="areas-list">
+                <div class="area-item glass-panel">
+                    <i class="fas fa-terminal"></i>
+                    <span>Linux & TUI Development</span>
+                </div>
+                <div class="area-item glass-panel">
+                    <i class="fas fa-code"></i>
+                    <span>System Programming (C/C++)</span>
+                </div>
+                <div class="area-item glass-panel">
+                    <i class="fas fa-globe"></i>
+                    <span>Web Development</span>
+                </div>
+                <div class="area-item glass-panel">
+                    <i class="fas fa-plug"></i>
+                    <span>API Integration</span>
+                </div>
+                <div class="area-item glass-panel">
+                    <i class="fas fa-paint-brush"></i>
+                    <span>UI/UX for CLI</span>
+                </div>
+                <div class="area-item glass-panel">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Open Source</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills-section">
+            <div class="section-header">
+                <h2><i class="fas fa-tools"></i> Technical Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">C</span>
+                        <span class="skill-chip">C++</span>
+                        <span class="skill-chip">Python</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-terminal"></i> Tools & Tech</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">Linux</span>
+                        <span class="skill-chip">Git</span>
+                        <span class="skill-chip">VS Code</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-layer-group"></i> Frameworks</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">Textual</span>
+                        <span class="skill-chip">Pygame</span>
+                        <span class="skill-chip">Flask</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-globe"></i> Web Dev</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">HTML/CSS</span>
+                        <span class="skill-chip">JS</span>
+                        <span class="skill-chip">Responsive UI</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-microchip"></i> System & CLI</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">CLI Tools</span>
+                        <span class="skill-chip">Debugging</span>
+                        <span class="skill-chip">Shell</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+                <div class="skill-card glass-panel">
+                    <h3><i class="fas fa-brain"></i> DSA & Logic</h3>
+                    <div class="skill-tags">
+                        <span class="skill-chip">Data Structures</span>
+                        <span class="skill-chip">Algorithms</span>
+                    </div>
+                    <div class="progress-segmented">
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-red"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment fill-primary"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                        <div class="segment empty"></div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section" id="projects">
+            <div class="section-header">
+                <h2><i class="fas fa-magic"></i> Featured Projects</h2>
+            </div>
+            <div class="projects-grid" id="github-projects">
+                <!-- Loading State -->
+                <div class="project-loader">
+                    <div class="loader-border">
+                        <div class="loader-core"></div>
+                    </div>
+                    <p>Fetching repositories from GitHub...</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Extra-Curricular Section -->
+        <section class="interests-section">
+            <div class="section-header">
+                <h2><i class="fas fa-star"></i> Extra-Curricular / Interests</h2>
+            </div>
+            <div class="interest-list">
+                <div class="interest-item glass-panel">
+                    <i class="fab fa-linux"></i>
+                    <span>Exploring Linux systems</span>
+                </div>
+                <div class="interest-item glass-panel">
+                    <i class="fas fa-globe"></i>
+                    <span>Learning new languages</span>
+                </div>
+                <div class="interest-item glass-panel">
+                    <i class="fas fa-book"></i>
+                    <span>Reading tech content</span>
+                </div>
+                <div class="interest-item glass-panel">
+                    <i class="fas fa-microchip"></i>
+                    <span>Problem solving</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2026 Aman Kumar. Designed with aesthetics.</p>
+        </footer>
+    </div>
+    <script>
+        // Theme Management
+        const themeToggle = document.getElementById('theme-toggle');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme) {
+            document.documentElement.setAttribute('data-theme', currentTheme);
+        }
+
+        themeToggle.addEventListener('click', () => {
+            let theme = document.documentElement.getAttribute('data-theme');
+            if (theme === 'dark') {
+                theme = 'light';
+                document.documentElement.removeAttribute('data-theme');
+            } else {
+                theme = 'dark';
+                document.documentElement.setAttribute('data-theme', 'dark');
+            }
+            localStorage.setItem('theme', theme);
+        });
+
+        // Hide loader when page is fully loaded
+        window.addEventListener('load', function () {
+            setTimeout(function () {
+                const loader = document.getElementById('loader');
+                if (loader) {
+                    loader.style.opacity = '0';
+                    loader.style.pointerEvents = 'none';
+                }
+            }, 500); 
+            
+            // Fetch GitHub Projects
+            fetchGitHubProjects();
+        });
+
+        async function fetchGitHubProjects() {
+            const container = document.getElementById('github-projects');
+            const username = 'Aman-codes0-0';
+            
+            try {
+                // Fetch all repos to sort them by stars manually
+                const response = await fetch(`https://api.github.com/users/${username}/repos?per_page=100`);
+                if (!response.ok) throw new Error('GitHub API request failed');
+                
+                const allRepos = await response.json();
+                
+                // Filter: only original repos with STARS, then sort by stars, then take top 3
+                const originalRepos = allRepos
+                    .filter(repo => !repo.fork && repo.stargazers_count > 0)
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                    .slice(0, 3);
+                
+                container.innerHTML = '';
+                
+                if (originalRepos.length === 0) {
+                    container.innerHTML = '<p class="error-msg">No public repositories found.</p>';
+                    return;
+                }
+
+                // Process each repo in parallel
+                const projectPromises = originalRepos.map(async (repo, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card glass-panel';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    const colors = ['#319795', '#e53e3e', '#4fd1c5', '#f87171', '#6366f1', '#a855f7'];
+                    const randomColor = colors[index % colors.length];
+                    const ogImageUrl = `https://opengraph.githubassets.com/1/${username}/${repo.name}`;
+                    
+                    // Fetch images from README
+                    let images = [ogImageUrl]; // Default to OG image
+                    try {
+                        const readmeResponse = await fetch(`https://api.github.com/repos/${username}/${repo.name}/readme`);
+                        if (readmeResponse.ok) {
+                            const readmeData = await readmeResponse.json();
+                            const content = atob(readmeData.content);
+                            
+                            // Regex to find images
+                            const imgRegex = /(?:!\[.*?\]\((.*?)\)|<img.*?src=["'](.*?)["'])/g;
+                            let match;
+                            const extractedImages = [];
+                            
+                            while ((match = imgRegex.exec(content)) !== null) {
+                                let imgUrl = match[1] || match[2];
+                                if (imgUrl && !imgUrl.startsWith('http')) {
+                                    // Resolve relative paths
+                                    imgUrl = `https://raw.githubusercontent.com/${username}/${repo.name}/${repo.default_branch || 'main'}/${imgUrl.replace(/^\.\//, '')}`;
+                                }
+                                if (imgUrl && !imgUrl.includes('.svg')) { // Skip icons/badges
+                                    extractedImages.push(imgUrl);
+                                }
+                            }
+                            
+                            if (extractedImages.length > 0) {
+                                images = extractedImages.slice(0, 5); // Max 5 images
+                            }
+                        }
+                    } catch (e) {
+                        console.warn(`Could not fetch README for ${repo.name}`, e);
+                    }
+
+                    let langIcon = 'fa-code';
+                    if (repo.language === 'Python') langIcon = 'fa-brands fa-python';
+                    else if (repo.language === 'JavaScript') langIcon = 'fa-brands fa-js';
+                    else if (repo.language === 'TypeScript') langIcon = 'fa-brands fa-js';
+                    else if (repo.language === 'C++') langIcon = 'fa-solid fa-c';
+                    else if (repo.language === 'HTML') langIcon = 'fa-brands fa-html5';
+                    else if (repo.language === 'CSS') langIcon = 'fa-brands fa-css3-alt';
+
+                    card.innerHTML = `
+                        <div class="project-image" id="slider-${repo.id}">
+                            <div class="slider-container">
+                                ${images.map(img => `<div class="slide"><img src="${img}" alt="${repo.name}" onerror="this.src='${ogImageUrl}'"></div>`).join('')}
+                            </div>
+                            ${images.length > 1 ? `
+                                <button class="slider-arrow arrow-prev" onclick="moveSlider('${repo.id}', -1)"><i class="fas fa-chevron-left"></i></button>
+                                <button class="slider-arrow arrow-next" onclick="moveSlider('${repo.id}', 1)"><i class="fas fa-chevron-right"></i></button>
+                                <div class="slider-dots">
+                                    ${images.map((_, i) => `<div class="dot ${i === 0 ? 'active' : ''}" onclick="setSlider('${repo.id}', ${i})"></div>`).join('')}
+                                </div>
+                            ` : ''}
+                        </div>
+                        <div class="project-content">
+                            <h3>${repo.name}</h3>
+                            <p class="client">${repo.description || 'Exploring code and building solutions. Check out the repository for more details.'}</p>
+                            <div class="project-stats">
+                                <span><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
+                                <span><i class="fas fa-code-branch"></i> ${repo.forks_count}</span>
+                                ${repo.language ? `<span><i class="${langIcon}" style="color: ${randomColor}"></i> ${repo.language}</span>` : ''}
+                            </div>
+                            <div class="tags">
+                                <a href="${repo.html_url}" target="_blank" class="tag tag-primary">View Repo <i class="fas fa-external-link-alt" style="font-size: 0.7rem;"></i></a>
+                            </div>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                    
+                    // Initialize state for this slider
+                    sliderStates[repo.id] = { current: 0, total: images.length };
+                });
+                
+                await Promise.all(projectPromises);
+                
+            } catch (error) {
+                console.error('Error fetching GitHub repos:', error);
+                container.innerHTML = `<div class="error-msg"><p>Failed to load projects.</p></div>`;
+            }
+        }
+
+        const sliderStates = {};
+
+        function moveSlider(id, direction) {
+            const state = sliderStates[id];
+            state.current = (state.current + direction + state.total) % state.total;
+            updateSliderUI(id);
+        }
+
+        function setSlider(id, index) {
+            sliderStates[id].current = index;
+            updateSliderUI(id);
+        }
+
+        function updateSliderUI(id) {
+            const state = sliderStates[id];
+            const container = document.querySelector(`#slider-${id} .slider-container`);
+            const dots = document.querySelectorAll(`#slider-${id} .dot`);
+            
+            container.style.transform = `translateX(-${state.current * 100}%)`;
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === state.current);
+            });
+        }
+    </script>
+</body>
+
+</html>
