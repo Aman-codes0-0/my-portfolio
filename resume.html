@@ -40,7 +40,12 @@
                     <i class="fas fa-sun"></i>
                 </button>
             </div>
-            <nav class="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>HOME</span></a></li>
                     <li><a href="achievements.html" class="nav-item"><i class="fas fa-trophy"></i><span>ACHIEVEMENTS</span></a></li>
@@ -59,21 +64,21 @@
                 <h2><i class="fas fa-file-invoice"></i> Professional Resume</h2>
             </div>
 
-            <div class="glass-panel" style="padding: 3rem; margin-bottom: 3rem;">
-                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem;">
+            <div class="glass-panel resume-card">
+                <div class="resume-header">
                     <div>
-                        <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem;">AMAN KUMAR</h1>
-                        <p style="font-size: 1.1rem; color: var(--primary-color);">System Developer & Linux Enthusiast</p>
+                        <h1 class="resume-name">AMAN KUMAR</h1>
+                        <p class="resume-title">System Developer & Linux Enthusiast</p>
                     </div>
-                    <div style="text-align: right;">
+                    <div class="resume-actions">
                         <a href="javascript:void(0)" onclick="window.print()" class="cta-button">Download PDF <i class="fas fa-download"></i></a>
                     </div>
                 </div>
 
-                <div class="resume-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 3rem;">
+                <div class="resume-grid-container">
                     <aside>
-                        <div style="margin-bottom: 2rem;">
-                            <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Contact</h3>
+                        <div class="resume-item">
+                            <h3 class="resume-section-title">Contact</h3>
                             <p style="margin-bottom: 0.5rem;"><a href="mailto:at456761@gmail.com" class="highlight-link" style="font-weight: 400;"><i class="fas fa-envelope" style="width: 20px;"></i> at456761@gmail.com</a></p>
                             <p style="margin-bottom: 0.5rem;"><a href="mailto:senaman133@gmail.com" class="highlight-link" style="font-weight: 400;"><i class="fas fa-envelope" style="width: 20px;"></i> senaman133@gmail.com</a></p>
                             <p style="margin-bottom: 0.5rem;"><i class="fas fa-location-dot" style="width: 20px;"></i> Kanpur, Uttar Pradesh, India</p>
@@ -81,15 +86,15 @@
                             <p><a href="https://www.linkedin.com/in/aman-kumar-44b4183a0/" target="_blank" class="highlight-link" style="font-weight: 400;"><i class="fab fa-linkedin" style="width: 20px;"></i> Aman Kumar</a></p>
                         </div>
 
-                        <div style="margin-bottom: 2rem;">
-                            <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Education</h3>
+                        <div class="resume-item">
+                            <h3 class="resume-section-title">Education</h3>
                             <p><strong>Bachelor of Technology in CSE</strong></p>
                             <p style="font-size: 0.9rem; color: var(--text-light);">Kanpur Institute of Engineering, Kanpur</p>
                             <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 0.2rem;">2023 - 2027</p>
                         </div>
 
                         <div>
-                            <h3 style="color: var(--primary-color); margin-bottom: 1rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Skills</h3>
+                            <h3 class="resume-section-title">Skills</h3>
                             <div class="tags" style="gap: 0.5rem;">
                                 <span class="tag tag-primary">C/C++</span>
                                 <span class="tag tag-primary">Python</span>
@@ -102,21 +107,21 @@
                     </aside>
 
                     <main>
-                        <div style="margin-bottom: 2.5rem;">
-                            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Profile Summary</h3>
+                        <div class="resume-item">
+                            <h3 class="resume-section-title">Profile Summary</h3>
                             <p>Passionate developer focused on building efficient software systems and meaningful digital experiences. <strong>Finalist at Smart India Hackathon 2025 and Top 10 performer at Aviothic 2.0</strong>, with a strong focus on building practical and scalable solutions. Deep appreciation for the Linux ecosystem and experience in creating high-performance terminal-based applications.</p>
                         </div>
 
-                        <div style="margin-bottom: 2.5rem;">
-                            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Featured Projects <i class="fab fa-github" style="margin-left: 5px; color: var(--text-color);"></i></h3>
+                        <div class="resume-item">
+                            <h3 class="resume-section-title">Featured Projects <i class="fab fa-github" style="margin-left: 5px; color: var(--text-color);"></i></h3>
                             
                             <div id="github-pinned-projects">
                                 <!-- GitHub Projects will be loaded dynamically here -->
                             </div>
                         </div>
 
-                        <div style="margin-bottom: 2.5rem;">
-                            <h3 style="color: var(--primary-color); margin-bottom: 1.5rem; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;">Certifications & Achievements</h3>
+                        <div class="resume-item">
+                            <h3 class="resume-section-title">Certifications & Achievements</h3>
                             <ul style="list-style: disc; margin-left: 1.5rem; color: var(--text-color); opacity: 0.9;">
                                 <li style="margin-bottom: 0.5rem;">Advanced Python Programming Certification</li>
                                 <li style="margin-bottom: 0.5rem;">Linux System Administration Specialist</li>
@@ -136,6 +141,28 @@
     </div>
 
     <script>
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : 'auto';
+            });
+
+            // Close menu when a nav item is clicked
+            const navItems = mainNav.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+
         // Theme Management
         const themeToggle = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme');
@@ -167,7 +194,6 @@
         // Fetch Pinned GitHub Projects
         async function fetchGitHubProjects() {
             const username = 'Aman-codes0-0';
-            // LIST YOUR PINNED PROJECTS HERE
             const pinnedRepos = ['Termi-music', 'Termi-Chat', 'Aviothic2.0_codeforgers']; 
             const container = document.getElementById('github-pinned-projects');
             
@@ -180,8 +206,6 @@
                 if (!response.ok) throw new Error('Failed to fetch from GitHub');
                 
                 const allRepos = await response.json();
-                
-                // Filter for pinned repos and maintain order
                 const reposToDisplay = pinnedRepos.map(name => 
                     allRepos.find(r => r.name.toLowerCase() === name.toLowerCase())
                 ).filter(Boolean);
@@ -191,19 +215,16 @@
                     return;
                 }
 
-                container.innerHTML = ''; // Clear loader
+                container.innerHTML = ''; 
                 renderResumeProjects(reposToDisplay);
                 
             } catch (error) {
                 console.error("Error fetching GitHub repos:", error);
-                
-                // Fallback data for Resume page
                 const fallbackRepos = [
                     { name: 'Termi-music', html_url: 'https://github.com/Aman-codes0-0/Termi-music', stargazers_count: 3, language: 'Python', description: 'Performance-oriented terminal music player with cloud streaming capabilities.' },
                     { name: 'Termi-Chat', html_url: 'https://github.com/Aman-codes0-0/Termi-Chat', stargazers_count: 0, language: 'Python', description: 'Ephemeral terminal-based chat application for secure and fast communication.' },
                     { name: 'Aviothic2.0_codeforgers', html_url: 'https://github.com/Aman-codes0-0/Aviothic2.0_codeforgers', stargazers_count: 0, language: 'TypeScript', description: 'Finalist project for Aviothic 2.0 - A unique anonymous chat platform.' }
                 ];
-                
                 container.innerHTML = '';
                 renderResumeProjects(fallbackRepos, true);
             }
@@ -223,11 +244,9 @@
             repos.forEach(repo => {
                 const language = repo.language || 'Multiple';
                 const projectHTML = `
-                    <div style="margin-bottom: 1.5rem; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); border-left: 2px solid transparent; padding: 10px; border-radius: 8px; cursor: default; position: relative;" 
-                         onmouseover="this.style.borderLeft='3px solid var(--accent-red)'; this.style.transform='translateY(-10px) scale(1.02)'; this.style.background='rgba(255,255,255,0.05)'; this.style.boxShadow='0 20px 40px rgba(0,0,0,0.3)'; this.style.zIndex='50';" 
-                         onmouseout="this.style.borderLeft='2px solid transparent'; this.style.transform='translateY(0) scale(1)'; this.style.background='transparent'; this.style.boxShadow='none'; this.style.zIndex='1';">
+                    <div class="resume-item" style="transition: all 0.3s ease; border-left: 2px solid transparent; padding: 10px; border-radius: 8px;">
                         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                            <h4><a href="${repo.html_url}" target="_blank" style="color: var(--text-color); text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-red)';" onmouseout="this.style.color='var(--text-color)';">${repo.name}</a></h4>
+                            <h4><a href="${repo.html_url}" target="_blank" style="color: var(--text-color); text-decoration: none;">${repo.name}</a></h4>
                             <span style="font-size: 0.85rem; color: #ecc94b;"><i class="fas fa-star"></i> ${repo.stargazers_count}</span>
                         </div>
                         <p style="font-size: 0.9rem; color: var(--primary-color); margin-bottom: 0.5rem; opacity: 0.9;">${language}</p>
@@ -238,7 +257,6 @@
             });
         }
 
-        // Call the function when DOM is ready
         window.addEventListener('DOMContentLoaded', fetchGitHubProjects);
     </script>
 </body>

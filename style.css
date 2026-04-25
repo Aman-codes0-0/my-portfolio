@@ -12,6 +12,11 @@
     --shadow-hover: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
     --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     --header-dashed: rgba(0, 0, 0, 0.05);
+    /* Fluid Typography */
+    --fs-h1: clamp(2rem, 8vw, 3.5rem);
+    --fs-h2: clamp(1.5rem, 6vw, 2.2rem);
+    --fs-h3: clamp(1.2rem, 4vw, 1.5rem);
+    --fs-body: clamp(0.95rem, 2vw, 1.1rem);
 }
 
 [data-theme="dark"] {
@@ -121,6 +126,10 @@ body {
 }
 
 
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
 h1,
 h2,
 h3,
@@ -170,6 +179,15 @@ ul {
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    /* Backdrop filter fallback */
+    background: var(--card-bg);
+}
+
+@supports not (backdrop-filter: blur(10px)) {
+    .glass-panel {
+        background: var(--bg-color);
+        opacity: 0.95;
+    }
 }
 
 .glass-panel:hover {
@@ -265,12 +283,37 @@ ul {
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex: 1;
 }
 
 .logo h1 {
     font-size: 2rem;
     font-weight: 700;
     letter-spacing: -0.5px;
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background: var(--text-color);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
 }
 
 .main-nav ul {
@@ -301,6 +344,65 @@ ul {
 .nav-item:hover i {
     transform: translateY(-3px);
     color: var(--accent-red);
+}
+
+/* Mobile Nav Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background: var(--bg-color);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: right 0.4s ease;
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid var(--border-color);
+    }
+
+    .main-nav.active {
+        right: 0;
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .nav-item {
+        font-size: 1rem;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .nav-item i {
+        font-size: 1.8rem;
+    }
+
+    /* Menu Toggle Animation */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg);
+    }
 }
 
 /* Hero Section */
@@ -393,7 +495,7 @@ ul {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
 }
 
@@ -484,7 +586,7 @@ ul {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem 1.5rem;
 }
 
@@ -769,16 +871,8 @@ footer {
 
 @media (max-width: 768px) {
     .header {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-        padding-bottom: 2rem;
-    }
-
-    .main-nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 1.2rem;
+        padding: 1rem 0;
+        gap: 1rem;
     }
 
     .hero {
@@ -790,10 +884,6 @@ footer {
     .profile-pic {
         width: 130px;
         height: 130px;
-    }
-
-    .interest-list, .areas-list {
-        grid-template-columns: 1fr;
     }
 
     .section-header h2 {
@@ -821,10 +911,6 @@ footer {
 
     .nav-item span {
         font-size: 0.65rem;
-    }
-
-    .skills-grid, .projects-grid {
-        grid-template-columns: 1fr;
     }
 
     .bio p {
@@ -916,7 +1002,7 @@ footer {
 
 .interest-list, .areas-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
 }
 
@@ -946,7 +1032,7 @@ footer {
 
 .interest-item i, .area-item i {
     color: var(--accent-red);
-    font-size: 1.2rem;
+    font-size: 1.8rem;
 }
 
 .skills-category {
@@ -1118,4 +1204,94 @@ footer {
         grid-template-columns: 1fr 2fr !important;
         gap: 2rem !important;
     }
+}
+
+/* Resume Page Specifics */
+.resume-card {
+    padding: clamp(1.5rem, 5vw, 3rem);
+    margin-bottom: 3rem;
+}
+
+.resume-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.5rem;
+}
+
+@media (max-width: 600px) {
+    .resume-header {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        align-items: center;
+    }
+}
+
+.resume-name {
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 0.5rem;
+}
+
+.resume-title {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.resume-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+}
+
+@media (max-width: 850px) {
+    .resume-grid-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+.resume-section-title {
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resume-item {
+    margin-bottom: 2rem;
+}
+
+/* Achievement/Project Card Specifics */
+.cert-card {
+    padding: 1.5rem;
+    border: 1px solid var(--primary-color);
+    background: rgba(49, 151, 149, 0.05);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.cert-title {
+    font-size: 1.1rem;
+    color: var(--text-color);
+}
+
+.cert-placeholder {
+    width: 100%;
+    height: 100px;
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
 }

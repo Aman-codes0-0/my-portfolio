@@ -45,18 +45,22 @@
                     <i class="fas fa-sun"></i>
                 </button>
             </div>
-            <nav class="main-nav">
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="main-nav" id="main-nav">
                 <ul>
                     <li><a href="index.html" class="nav-item"><i class="fas fa-home"></i><span>HOME</span></a></li>
                     <li><a href="achievements.html" class="nav-item"><i class="fas fa-trophy"></i><span>ACHIEVEMENTS</span></a></li>
                     <li><a href="projects.html" class="nav-item"><i class="fas fa-magic"></i><span>PROJECTS</span></a></li>
                     <li><a href="contact.html" class="nav-item" style="color: var(--text-color);"><i
-                                class="fas fa-envelope"
-                                style="color: var(--accent-red); transform: translateY(-3px);"></i><span>CONTACT</span></a>
+                                 class="fas fa-envelope"
+                                 style="color: var(--accent-red); transform: translateY(-3px);"></i><span>CONTACT</span></a>
                     </li>
                     <li><a href="resume.html" class="nav-item"><i class="fas fa-file-invoice"></i><span>RESUME</span></a></li>
                     <li><a href="https://www.linkedin.com/in/aman-kumar-44b4183a0/" class="nav-item" target="_blank"><i class="fab fa-linkedin"></i><span>LINKEDIN</span></a></li>
-
                     <li><a href="https://github.com/Aman-codes0-0" class="nav-item" target="_blank"><i class="fab fa-github"></i><span>GITHUB</span></a></li>
                 </ul>
             </nav>
@@ -68,10 +72,9 @@
                 <h2><i class="fas fa-envelope"></i> Get In Touch</h2>
             </div>
 
-            <div class="glass-panel" style="padding: 3rem; text-align: center;">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's work together</h3>
-                <p
-                    style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+            <div class="glass-panel" style="padding: clamp(1.5rem, 5vw, 3rem); text-align: center;">
+                <h3 style="font-size: clamp(1.5rem, 5vw, 2rem); margin-bottom: 1rem;">Let's work together</h3>
+                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
                     I'm currently available for freelance work and open to new opportunities. Whether you have a
                     question or just want to say hi, I'll try my best to get back to you!
                 </p>
@@ -80,20 +83,18 @@
                     Say Hello <i class="fas fa-paper-plane"></i>
                 </button>
 
-
-                <div
-                    style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-                    <div style="text-align: center;">
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 2rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
+                    <div style="text-align: center; min-width: 200px;">
                         <i class="fas fa-map-marker-alt"
                             style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                         <p style="font-weight: 600;">Location</p>
                         <p class="skill-meta">Kanpur, Uttar Pradesh, India</p>
                     </div>
-                    <div style="text-align: center;">
+                    <div style="text-align: center; min-width: 200px;">
                         <i class="fas fa-envelope-open-text"
                             style="font-size: 2rem; color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                         <p style="font-weight: 600;">Email</p>
-                        <p class="skill-meta" style="font-size: 0.8rem;">
+                        <p class="skill-meta" style="font-size: 0.85rem;">
                             <a href="mailto:at456761@gmail.com" style="color: inherit;">at456761@gmail.com</a><br>
                             <a href="mailto:senaman133@gmail.com" style="color: inherit;">senaman133@gmail.com</a>
                         </p>
@@ -109,7 +110,7 @@
 
         <!-- Contact Modal -->
         <div class="modal-overlay" id="contact-modal">
-            <div class="modal-content glass-panel">
+            <div class="modal-content glass-panel" style="padding: clamp(1.5rem, 5vw, 2.5rem);">
                 <i class="fas fa-times close-modal" id="close-modal"></i>
                 
                 <div id="contact-form-container">
@@ -146,6 +147,28 @@
     </div>
 
     <script>
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const mainNav = document.getElementById('main-nav');
+
+        if (menuToggle && mainNav) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : 'auto';
+            });
+
+            // Close menu when a nav item is clicked
+            const navItems = mainNav.querySelectorAll('.nav-item');
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    menuToggle.classList.remove('active');
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        }
+
         // Theme Management
         const themeToggle = document.getElementById('theme-toggle');
         const currentTheme = localStorage.getItem('theme');
@@ -171,7 +194,7 @@
             setTimeout(function () {
                 document.getElementById('loader').style.opacity = '0';
                 document.getElementById('loader').style.pointerEvents = 'none';
-            }, 500); // Small artificial delay for aesthetics
+            }, 500); 
         });
 
         // Modal Logic
@@ -182,35 +205,40 @@
         const formContainer = document.getElementById('contact-form-container');
         const successMsg = document.getElementById('success-msg');
 
-        openModalBtn.addEventListener('click', () => {
-            modalOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        });
+        if (openModalBtn) {
+            openModalBtn.addEventListener('click', () => {
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            });
+        }
 
         const closeModal = () => {
             modalOverlay.classList.remove('active');
             document.body.style.overflow = 'auto';
         };
 
-        closeModalBtn.addEventListener('click', closeModal);
-        modalOverlay.addEventListener('click', (e) => {
-            if (e.target === modalOverlay) closeModal();
-        });
+        if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+        if (modalOverlay) {
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) closeModal();
+            });
+        }
 
         // Form Submission Simulation
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('.submit-btn');
-            btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-            btn.style.opacity = '0.7';
-            btn.style.pointerEvents = 'none';
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const btn = contactForm.querySelector('.submit-btn');
+                btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
+                btn.style.opacity = '0.7';
+                btn.style.pointerEvents = 'none';
 
-            setTimeout(() => {
-                formContainer.style.display = 'none';
-                successMsg.style.display = 'block';
-            }, 1500);
-        });
-
+                setTimeout(() => {
+                    formContainer.style.display = 'none';
+                    successMsg.style.display = 'block';
+                }, 1500);
+            });
+        }
     </script>
 </body>
 
