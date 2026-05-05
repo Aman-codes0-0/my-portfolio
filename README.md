@@ -1,10 +1,6 @@
-# Aman Kumar's Portfolio
-
-A modern, responsive, and aesthetically pleasing personal portfolio website built with HTML, CSS, and JavaScript. It features a unique **Neon-Glassmorphism** design, smooth micro-animations, and dynamic interactions.
-
 ## Live Demo
 
-[Check out the Live Portfolio Here](https://Aman-codes0-0.github.io/my-portfolio) _(If you have deployed this repo)_
+[Check out the Live Portfolio Here](https://Aman-codes0-0.github.io/my-portfolio)
 
 ## Let's Connect
 
