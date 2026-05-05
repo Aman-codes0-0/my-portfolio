@@ -65,73 +65,80 @@
             </div>
 
             <div class="skills-grid">
-                <!-- Technical Certifications -->
-                <div class="skill-card glass-panel" style="padding: 2.5rem;">
-                    <div class="resume-section-title">
-                        <i class="fas fa-certificate" style="font-size: 1.5rem;"></i>
-                        <h3 style="font-size: 1.2rem;">Technical Certifications</h3>
+                <!-- Technical Certifications (Stacked vertically) -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- Python Certification Card -->
+                    <div class="skill-card glass-panel" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div class="resume-section-title" style="margin-bottom: 1rem;">
+                            <i class="fas fa-certificate" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                            <h3 style="font-size: 1.2rem;">Advanced Python Programming</h3>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Mastery in data structures, algorithms, and system integrations.</p>
+                        <div style="height: 180px; width: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);">
+                            <i class="fas fa-image" style="font-size: 2.5rem; color: var(--text-light); opacity: 0.3;"></i>
+                        </div>
                     </div>
-                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-                        <!-- Python Certification -->
-                        <div class="cert-card">
-                            <div>
-                                <p style="margin-bottom: 0.3rem;"><strong class="cert-title">Advanced Python Programming</strong></p>
-                                <p style="font-size: 0.85rem; color: var(--text-light);">Mastery in data structures, algorithms, and system integrations.</p>
-                            </div>
-                            <div class="cert-placeholder">
-                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
-                            </div>
-                        </div>
 
-                        <!-- C++ Certification -->
-                        <div class="cert-card">
-                            <div>
-                                <p style="margin-bottom: 0.3rem;"><strong class="cert-title">C++ System Development</strong></p>
-                                <p style="font-size: 0.85rem; color: var(--text-light);">Focus on memory management, STL, and low-level optimizations.</p>
-                            </div>
-                            <div class="cert-placeholder">
-                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
-                            </div>
+                    <!-- C++ Certification Card -->
+                    <div class="skill-card glass-panel" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div class="resume-section-title" style="margin-bottom: 1rem;">
+                            <i class="fas fa-certificate" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                            <h3 style="font-size: 1.2rem;">C++ System Development</h3>
                         </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Focus on memory management, STL, and low-level optimizations.</p>
+                        <div style="height: 180px; width: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);">
+                            <i class="fas fa-image" style="font-size: 2.5rem; color: var(--text-light); opacity: 0.3;"></i>
+                        </div>
+                    </div>
 
-                        <!-- Linux Certification -->
-                        <div class="cert-card">
-                            <div>
-                                <p style="margin-bottom: 0.3rem;"><strong class="cert-title">Linux System Administration</strong></p>
-                                <p style="font-size: 0.85rem; color: var(--text-light);">Shell scripting, server management, and security protocols.</p>
-                            </div>
-                            <div class="cert-placeholder">
-                                <i class="fas fa-image" style="font-size: 1.5rem; color: var(--text-light); opacity: 0.5;"></i>
-                            </div>
+                    <!-- Linux Certification Card -->
+                    <div class="skill-card glass-panel" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div class="resume-section-title" style="margin-bottom: 1rem;">
+                            <i class="fas fa-certificate" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                            <h3 style="font-size: 1.2rem;">Linux System Administration</h3>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Shell scripting, server management, and security protocols.</p>
+                        <div style="height: 180px; width: 100%; border-radius: 8px; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); border: 1px dashed rgba(255,255,255,0.2);">
+                            <i class="fas fa-image" style="font-size: 2.5rem; color: var(--text-light); opacity: 0.3;"></i>
                         </div>
                     </div>
                 </div>
 
-                <!-- Hackathons & Awards -->
-                <div class="skill-card glass-panel" style="padding: 2.5rem; grid-column: span 2;">
-                    <div class="resume-section-title">
-                        <i class="fas fa-award" style="font-size: 1.5rem; color: var(--accent-red);"></i>
-                        <h3 style="font-size: 1.2rem;">Awards & Recognitions</h3>
-                    </div>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
-                        <!-- SIH 2025 -->
-                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--primary-color); background: rgba(49, 151, 149, 0.05);">
-                            <p style="margin-bottom: 0.5rem;"><strong class="cert-title">Finalist – Smart India Hackathon 2025</strong></p>
-                            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Selected as a finalist in one of India's largest national-level hackathons.</p>
-                            <div class="cert-placeholder" style="height: 180px;">
-                                <i class="fas fa-image" style="font-size: 2rem; color: var(--text-light); margin-bottom: 0.5rem;"></i>
-                                <span style="font-size: 0.8rem; color: var(--text-light);">Upload SIH Certificate</span>
-                            </div>
+                <!-- Hackathons & Awards (Stacked vertically) -->
+                <div style="display: flex; flex-direction: column; gap: 2rem;">
+                    <!-- SIH 2025 Card -->
+                    <div class="skill-card glass-panel" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div class="resume-section-title" style="margin-bottom: 1rem;">
+                            <i class="fas fa-award" style="font-size: 1.5rem; color: var(--primary-color);"></i>
+                            <h3 style="font-size: 1.2rem;">Finalist – SIH 2025</h3>
                         </div>
-
-                        <!-- Aviothic 2.0 -->
-                        <div class="glass-panel" style="padding: 1.5rem; border: 1px solid var(--accent-red); background: rgba(229, 62, 62, 0.05);">
-                            <p style="margin-bottom: 0.5rem;"><strong class="cert-title">Secured Top 10 Rank in Aviothic 2.0</strong></p>
-                            <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">College-Level Hackathon | Demonstrated strong problem-solving and development skills.</p>
-                            <div class="cert-placeholder" style="height: 180px;">
-                                <i class="fas fa-image" style="font-size: 2rem; color: var(--text-light); margin-bottom: 0.5rem;"></i>
-                                <span style="font-size: 0.8rem; color: var(--text-light);">Upload Aviothic Certificate</span>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">Selected as a finalist in one of India's largest national-level hackathons.</p>
+                        <div style="height: 220px; width: 100%; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.1);" 
+                             onclick="openImagePreview('source/SIH_upright.jpg', 0)"
+                             onmouseover="this.children[0].style.opacity='1'; this.children[1].style.transform='scale(1.02)'" 
+                             onmouseout="this.children[0].style.opacity='0'; this.children[1].style.transform='scale(1)'">
+                            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.15); z-index: 10; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                                <i class="fas fa-search-plus" style="color: white; font-size: 2.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
                             </div>
+                            <img src="source/SIH_upright.jpg" alt="SIH Certificate" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
+                        </div>
+                    </div>
+
+                    <!-- Aviothic 2.0 Card -->
+                    <div class="skill-card glass-panel" style="padding: 2.5rem; display: flex; flex-direction: column;">
+                        <div class="resume-section-title" style="margin-bottom: 1rem;">
+                            <i class="fas fa-award" style="font-size: 1.5rem; color: var(--accent-red);"></i>
+                            <h3 style="font-size: 1.2rem;">Top 10 Rank in Aviothic 2.0</h3>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 1.5rem;">College-Level Hackathon | Demonstrated strong problem-solving and development skills.</p>
+                        <div style="height: 220px; width: 100%; border-radius: 8px; overflow: hidden; display: flex; justify-content: center; align-items: center; background: rgba(255,255,255,0.05); cursor: pointer; position: relative; border: 1px solid rgba(0,0,0,0.1);" 
+                             onclick="openImagePreview('source/Aviothic2.0_upright.jpg', 0)"
+                             onmouseover="this.children[0].style.opacity='1'; this.children[1].style.transform='scale(1.02)'" 
+                             onmouseout="this.children[0].style.opacity='0'; this.children[1].style.transform='scale(1)'">
+                            <div style="position: absolute; width: 100%; height: 100%; background: rgba(0,0,0,0.15); z-index: 10; display: flex; justify-content: center; align-items: center; opacity: 0; transition: opacity 0.3s ease;">
+                                <i class="fas fa-search-plus" style="color: white; font-size: 2.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.5);"></i>
+                            </div>
+                            <img src="source/Aviothic2.0_upright.jpg" alt="Aviothic Certificate" style="width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease;">
                         </div>
                     </div>
                 </div>
@@ -143,6 +150,12 @@
             <p>&copy; 2026 Aman Kumar. Designed with aesthetics.</p>
         </footer>
     </div>
+
+        <!-- Image Preview Modal -->
+        <div id="image-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 9999; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
+            <span id="close-image-modal" style="position: absolute; top: 20px; right: 30px; color: white; font-size: 2.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--accent-red)'" onmouseout="this.style.color='white'">&times;</span>
+            <img id="modal-img" src="" alt="Preview" style="max-height: 90vh; max-width: 90vw; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); transition: transform 0.3s ease;">
+        </div>
 
     <script>
         // Hamburger Menu Toggle
@@ -194,6 +207,44 @@
                 document.getElementById('loader').style.pointerEvents = 'none';
             }, 500);
         });
+
+        // Image Modal Logic
+        const imageModal = document.getElementById('image-modal');
+        const modalImg = document.getElementById('modal-img');
+        const closeImageModal = document.getElementById('close-image-modal');
+
+        window.openImagePreview = function(src, rotation) {
+            if (!imageModal || !modalImg) return;
+            imageModal.style.display = 'flex';
+            modalImg.src = src;
+            
+            // Apply rotation and handle scaling if rotated
+            if (rotation === 90 || rotation === -90) {
+                // When rotated 90deg, the image's height becomes its visual width
+                // To prevent it from overflowing the screen width, we limit its height to 90vw
+                modalImg.style.maxHeight = '90vw';
+                modalImg.style.maxWidth = '90vh';
+            } else {
+                modalImg.style.maxHeight = '90vh';
+                modalImg.style.maxWidth = '90vw';
+            }
+            
+            modalImg.style.transform = `rotate(${rotation}deg)`;
+            document.body.style.overflow = 'hidden';
+        };
+
+        const closePreview = () => {
+            if (!imageModal) return;
+            imageModal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        };
+
+        if (closeImageModal) closeImageModal.addEventListener('click', closePreview);
+        if (imageModal) {
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) closePreview();
+            });
+        }
     </script>
 </body>
 
